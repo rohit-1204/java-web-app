@@ -24,20 +24,14 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'mvn clean package'
+                echo "Build successful......"
             }
         }
-        stage('Installing Tomcat') {
-            steps {
-                sh 'sudo apt update'
-                sh 'sudo apt install tomcat9 -y'
-                sh 'sudo systemctl start tomcat9'
-                sh 'sudo systemctl enable tomcat9'
-
-            }
-        }
+       
         stage('Deploy') {
             steps {
                 sh 'sudo cp target/java-web-app-1.0-SNAPSHOT.war /var/lib/tomcat9/webapps/'
+                echo "Application deployed successfully......"
             }
 
         }
