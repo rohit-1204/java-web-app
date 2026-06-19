@@ -8,8 +8,8 @@ pipeline {
     stages {
         stage('checkout') {
             steps {
-                git branch:'master'
-                    url:'https://github.com/rohit-1204/java-web-app.git'
+                git branch:"master",
+                url:"https://github.com/rohit-1204/java-web-app.git"
             }
         }
 
