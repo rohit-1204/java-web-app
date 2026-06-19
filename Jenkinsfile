@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    pollSCM 'H/2 * * * *'  # Polling the SCM for changes every 2 minutes
+    pollSCM 'H/2 * * * *'
 
     stages {
         stage('checkout') {
